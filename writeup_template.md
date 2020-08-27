@@ -37,6 +37,7 @@ The goals / steps of this project are the following:
 [image16]: ./my_images/six_grayscale.png "6 input images"
 [image17]: ./my_images/prediction.png "Prediction"
 [image18]: ./my_images/prediction_2.png "Prediction of all images with 3 candidates"
+[image19]: ./my_images/softmax.png "Softmax"
 
 
 ## Rubric Points
@@ -47,7 +48,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/raffael87/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -193,18 +194,9 @@ In general the accuracy is not as good as expected.
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					|
-|:---------------------:|:---------------------------------------------:|
-| .60         			| Stop sign   									|
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ...
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+For the first image, the model is relatively sure that this is a construction sign (probability of 1), and the image does contain a stop sign. So all others have 0 probability.
+For the second  image, the model is relatively sure that this is a kids running sign (probability of 1), and the image does contain a kids running sign. So all others have 0 probability.
+For the third, the model is relatively sure that this is a ! sign (probability of .98), but the image does not contain a ! sign. Moreover also in the candidates there is no stop sign. So this is a true false positive.
+For the fourth, also a miss classification, the model is quite sure yet, wit .78. But also in the other two candidates there is no animal crossing sign. An interessting fact is, that a round sign has a probability of .22
+Fifth and sixth image are classified with 1.0 probability.
+![alt text][image19].
